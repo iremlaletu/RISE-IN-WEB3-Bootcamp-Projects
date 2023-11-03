@@ -1,7 +1,5 @@
 # CHZ Projects
 
-PLEASE CHECK virtual-meet, NOT template.
-
 ## Projects
 
 -   NFT marketplace using thirdweb
