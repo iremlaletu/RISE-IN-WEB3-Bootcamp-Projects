@@ -14,7 +14,8 @@ export function useBalances() {
     const [nativeBalance, setNativeBalance] = useState<NativeBalance>()
     const {address} = useAppContext()
 
-    const ChivasRegal = "0xf66288961a3495ea9140fbd7c69e70a59db08b16"
+  //this is for HW1
+    const ChivasRegal = "0xf66288961a3495ea9140fbd7c69e70a59db08b16";
 
     const fetchTokenBalance = useCallback(async () => {
         try{
@@ -72,6 +73,8 @@ export function useBalances() {
         }
     }, []);
 
+
+    //This is for HW1
     const eligibilityChecker = (tokens: TokenBalance[]) => {
         try{
           const eligibleToken = tokens.find(
