@@ -37,3 +37,5 @@ export default function Wallet() {
         </Layout>
     );
 }
+//we use the id to create the key because every HTML element needs to be identifiable with the unique key
+// <NFTCard/> is a UI component we made 

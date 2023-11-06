@@ -1,5 +1,7 @@
 # CHZ Projects
-with homeworks
+with homeworks:
+for vitual-meet, please check hooks/usebalance.ts,
+for nft-marketplace, please check....
 ## Projects
 
 -   NFT marketplace using thirdweb

@@ -24,9 +24,9 @@ function MeetingPage() {
 
                     <h2 className="my-8 text-center text-xl font-bold">
                         <div className="my-4">
-                            only Chivas token holders will be eligible to join
+                            only Paris Saint-Germai token holders will be eligible to join
                         </div>
-                        <div className="my-4">{`Your Chivas balance is ${balance}`}</div>
+                        <div className="my-4">{`Your Paris Saint-Germai balance is ${balance}`}</div>
                         <div className="my-4 ">
                             {`YOU ARE ${eligible ? "" : "NOT"} ELIGIBLE`}
                         </div>

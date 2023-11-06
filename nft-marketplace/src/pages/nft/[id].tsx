@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 
 function NFTDetailsPage() {
     const router = useRouter();
-    const [price, setPrice] = useState(0.01);
+    const [price, setPrice] = useState(0.03);
     const [symbol, setSymbol] = useState("");
     const [listingID, setListingID] = useState("");
     const [nftID, setNftID] = useState("");
@@ -72,3 +72,10 @@ function NFTDetailsPage() {
     );
 }
 export default NFTDetailsPage;
+
+// here, we can actually show the details about NFT
+// first start implementing the marketplace function
+//when user clicks the nft s/he owns,is going to be directed to ID page
+// ID page will render the NFT details, under that if the nft isnt listed, we want to have a small card that lists the nft, if the list okay, we will another card that says cancel this listing. for that we have some UI components, first is in /NFTDetails, imported from @thirdweb-dev/sdk we are just going to be showing them based on the inputs that we getting
+
+//when we get the actual detail about nft, we are calling "NFTDetail" functional components

@@ -40,9 +40,12 @@ const SellNFTCard: FC<SellNFTCardProps> = ({ price, onUpdatePrice, id }) => {
             });
 
             const listing = createListingFromPriceID(price, id);
+            //we implemented this function with 2 param. because this func has many param. but we dont want a user to be able to change concract address or the others.
+            //
 
             // List NFT
             createDirectListing(listing);
+            // we defined in the types/ the same type thirdweb used to store listings
         } catch (e) {
             console.log(e);
         }
@@ -81,3 +84,16 @@ const SellNFTCard: FC<SellNFTCardProps> = ({ price, onUpdatePrice, id }) => {
     );
 };
 export default SellNFTCard;
+
+//the reason we are getting the nft contract is actually related to the logic of selling.
+
+//market place is another entity from our nft collection, since we are trying to sell our nfts on marketplace when users buy from mp, marketplace needs to transfer on our behalf the nft, so we need to give approval to mp so that mp can hace the authority to transfer the nft
+
+//price => we are getting from ID page
+//handle price change => to setting price in the ID page with useState().
+
+//users will give us a number that s/he wants to sell for and we are going to sell this nft the handle listing
+
+//now we are getting the price input from the user we are handling the pricechange and setting the event.target.value as a number to the state of id.tsx
+
+//once the users clicks the list, we are handling the listing starting with granting role to the market place, so that mp can sell on our behalf and  we are just create the listen with the price that we have get from the user

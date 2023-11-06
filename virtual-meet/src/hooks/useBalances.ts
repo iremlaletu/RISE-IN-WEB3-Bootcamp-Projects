@@ -15,7 +15,7 @@ export function useBalances() {
     const {address} = useAppContext()
 
   //this is for HW1
-    const ChivasRegal = "0xf66288961a3495ea9140fbd7c69e70a59db08b16";
+    const ParisSaintGermai = "0xa4bf4104ec0109591077Ee5F4a2bFD13dEE1Bdf8";
 
     const fetchTokenBalance = useCallback(async () => {
         try{
@@ -78,7 +78,7 @@ export function useBalances() {
     const eligibilityChecker = (tokens: TokenBalance[]) => {
         try{
           const eligibleToken = tokens.find(
-            (token) => token.token_address === ChivasRegal && Number(token.balance) >= 1
+            (token) => token.token_address === ParisSaintGermai && Number(token.balance) >= 1
           );
 
           if (eligibleToken) {
