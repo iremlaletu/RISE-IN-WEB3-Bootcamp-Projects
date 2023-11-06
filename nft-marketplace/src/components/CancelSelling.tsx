@@ -40,7 +40,7 @@ const CancelSellingCard: FC<CancelSellingCardProps> = ({
                 className="mt-4 bg-blue-500 bg-blue-700 text-white font-bold py-2 px-4 rounded"
             >
                 Cancel Listing
-            </button>
+            </button> <br />
 
             {(error as unknown as boolean) ? (
                 <div className="text-center mt-4">Error Delisting! </div>

@@ -9,6 +9,8 @@ import {
 } from "@thirdweb-dev/react";
 import { type FC } from "react";
 
+//you can find some explanation at the bottom of the page
+
 interface SellNFTCardProps {
     price: number;
     onUpdatePrice: (newPrice: number) => void;
@@ -30,6 +32,7 @@ const SellNFTCard: FC<SellNFTCardProps> = ({ price, onUpdatePrice, id }) => {
     const handlePriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         onUpdatePrice(Number(event.target.value));
     };
+    
 
     const handleListing = () => {
         try {

@@ -4,6 +4,7 @@ import { getMarketplaceAddress } from "@/util/getContractAddress";
 import { useContract, useValidDirectListings } from "@thirdweb-dev/react";
 
 function Home() {
+    
     const { contract: marketplace } = useContract(
         getMarketplaceAddress(),
         "marketplace-v3"

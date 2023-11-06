@@ -7,6 +7,7 @@ import CancelSellingCard from "@/components/CancelSelling";
 import SellNFTCard from "@/components/SellNFTCard";
 import { useRouter } from "next/router";
 
+//you can find some explanation at the bottom of the page
 function NFTDetailsPage() {
     const router = useRouter();
     const [price, setPrice] = useState(0.03);
@@ -14,16 +15,17 @@ function NFTDetailsPage() {
     const [listingID, setListingID] = useState("");
     const [nftID, setNftID] = useState("");
 
+    //this is for Homework
+    const [contractId, setContractId] =useState("")
+
     const { marketplace } = getMarketplaceContract();
     const { nft_contract } = getNFTContract();
-
     const { data: nft, isLoading: isNFTLoading } = useNFT(nft_contract, nftID);
-
     const { data: directListings } = useValidDirectListings(marketplace, {
         start: 0,
         count: 100,
     });
-
+    
     useEffect(() => {
         if (typeof window !== "undefined") {
             const { id } = router.query;
@@ -36,6 +38,15 @@ function NFTDetailsPage() {
             setSymbol(listedNFT.currencyValuePerToken.symbol);
         }
     }, [directListings, price, listingID, router.query]);
+
+    //this is for Homework which is about the transfering the nft
+    const handleTransfer =async () => {
+        try {
+            alert(`Transfering to ${contractId}`);
+        }catch(e) {
+            alert(`Couldn't transfer to this contract:${contractId} `)
+        };
+    }
 
     return (
         <Layout>
@@ -64,7 +75,20 @@ function NFTDetailsPage() {
                                 onUpdatePrice={setPrice}
                                 id={nftID}
                             />
-                        )}
+                        )} 
+                        <input
+                                type="text"
+                                placeholder="Contract ID"
+                                value={contractId}
+                                onChange={(e) => setContractId(e.target.value)}
+                            />
+                            <button
+                                className="mt-6 bg-blue-700 text-white font-bold py-2 px-4 rounded text-center"
+                                onClick={handleTransfer}
+                            >
+                            Transfer
+                            </button>
+                            
                     </>
                 )}
             </div>
@@ -74,8 +98,11 @@ function NFTDetailsPage() {
 export default NFTDetailsPage;
 
 // here, we can actually show the details about NFT
+
 // first start implementing the marketplace function
-//when user clicks the nft s/he owns,is going to be directed to ID page
+
+// when user clicks the nft s/he owns,is going to be directed to ID page.
+
 // ID page will render the NFT details, under that if the nft isnt listed, we want to have a small card that lists the nft, if the list okay, we will another card that says cancel this listing. for that we have some UI components, first is in /NFTDetails, imported from @thirdweb-dev/sdk we are just going to be showing them based on the inputs that we getting
 
-//when we get the actual detail about nft, we are calling "NFTDetail" functional components
+// when we get the actual detail about nft, we are calling "NFTDetail" functional components
