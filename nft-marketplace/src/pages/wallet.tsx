@@ -8,6 +8,7 @@ export default function Wallet() {
     const address = useAddress();
 
     const { data: ownedNFTs, isLoading } = useOwnedNFTs(nft_contract, address);
+    
     return (
         <Layout>
             <div>

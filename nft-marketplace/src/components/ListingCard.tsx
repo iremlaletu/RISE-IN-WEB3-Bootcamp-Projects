@@ -8,7 +8,6 @@ const ListingCard: FC<DirectListingV3> = (nft) => {
     const [message, setMessage] = useState("");
     const nft_address = getNFTAddress();
     const { marketplace } = getMarketplaceContract();
-
     const address = useAddress();
 
     const { data: directListing } = useValidDirectListings(marketplace, {

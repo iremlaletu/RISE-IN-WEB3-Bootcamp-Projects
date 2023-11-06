@@ -1,7 +1,7 @@
 # CHZ Projects
 with homeworks:
 for vitual-meet, please check hooks/usebalance.ts,
-for nft-marketplace, please check....
+for nft-marketplace, please check components/transferNFTcard.
 ## Projects
 
 -   NFT marketplace using thirdweb

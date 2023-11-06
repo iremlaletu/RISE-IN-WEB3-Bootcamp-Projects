@@ -5,13 +5,8 @@ import { useContract, useValidDirectListings } from "@thirdweb-dev/react";
 
 function Home() {
     
-    const { contract: marketplace } = useContract(
-        getMarketplaceAddress(),
-        "marketplace-v3"
-    );
-
-    const { data: directListings, isLoading } = useValidDirectListings(
-        marketplace,
+    const { contract: marketplace } = useContract(getMarketplaceAddress(),"marketplace-v3");
+    const { data: directListings, isLoading } = useValidDirectListings(marketplace,
         {
             start: 0,
             count: 100,
